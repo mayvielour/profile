@@ -128,20 +128,6 @@ function closeDetail(e) {
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDetail(); });
 
 
-// =============================================
-// MUSIC PLAYER — BISA PLAY MUSIK BENERAN
-// =============================================
-//
-//  CARA PAKAI:
-//  1. Letakkan file musik (.mp3 / .ogg / .wav) di folder yang sama
-//  2. Ganti "lagu.mp3" di HTML (<source src="lagu.mp3">)
-//  3. Buka index.html, klik ▶ untuk play
-//
-//  VOLUME:
-//  - Klik bar volume untuk set level
-//  - Klik 🔊 untuk mute/unmute
-//  - Scroll mouse di atas player untuk volume
-//
 
 const audio     = document.getElementById('audioPlayer');
 const playBtn   = document.getElementById('playBtn');
