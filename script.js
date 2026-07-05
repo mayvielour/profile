@@ -167,8 +167,14 @@ playBtn.addEventListener('click', () => {
 });
 
 // Update tombol play/pause
-audio.addEventListener('play', () => { playBtn.textContent = '⏸'; });
-audio.addEventListener('pause', () => { playBtn.textContent = '▶'; });
+audio.addEventListener('play', () => {
+  playBtn.querySelector('.play-icon').style.display = 'none';
+  playBtn.querySelector('.pause-icon').style.display = 'block';
+});
+audio.addEventListener('pause', () => {
+  playBtn.querySelector('.play-icon').style.display = 'block';
+  playBtn.querySelector('.pause-icon').style.display = 'none';
+});
 
 // Update progress bar
 audio.addEventListener('timeupdate', () => {
@@ -186,7 +192,8 @@ audio.addEventListener('loadedmetadata', () => {
 
 // Selesai
 audio.addEventListener('ended', () => {
-  playBtn.textContent = '▶';
+  playBtn.querySelector('.play-icon').style.display = 'block';
+  playBtn.querySelector('.pause-icon').style.display = 'none';
   progressFill.style.width = '0%';
   curTime.textContent = '0:00';
 });
@@ -238,14 +245,14 @@ muteBtn.addEventListener('click', () => {
 });
 
 function updateMuteIcon() {
+  var volOn = muteBtn.querySelector('.vol-on');
+  var volOff = muteBtn.querySelector('.vol-off');
   if (audio.muted || audio.volume === 0) {
-    muteBtn.textContent = '🔇';
-  } else if (audio.volume < 0.3) {
-    muteBtn.textContent = '🔈';
-  } else if (audio.volume < 0.7) {
-    muteBtn.textContent = '🔉';
+    volOn.style.display = 'none';
+    volOff.style.display = 'block';
   } else {
-    muteBtn.textContent = '🔊';
+    volOn.style.display = 'block';
+    volOff.style.display = 'none';
   }
 }
 
