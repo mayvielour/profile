@@ -154,7 +154,7 @@ nav a.active { color: var(--text); background: var(--card); box-shadow: var(--sh
 /* ===== HOME — Status Card ===== */
 
 .status-card {
-  background: var(--card);
+  background: linear-gradient(135deg, #ffffff 0%, #fdf0f3 50%, #ffffff 100%);
   border: 1px solid var(--card-border);
   border-radius: 20px;
   padding: 32px 28px;
@@ -164,6 +164,39 @@ nav a.active { color: var(--text); background: var(--card); box-shadow: var(--sh
   transition: all .3s ease;
   position: relative;
   overflow: hidden;
+  z-index: 0;
+}
+
+/* Grid pattern overlay */
+.card-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(232,131,155,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232,131,155,.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Scattered flowers */
+.card-flower {
+  position: absolute;
+  width: 32px; height: 32px;
+  object-fit: contain;
+  opacity: .18;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.flower-1 { top: 12px; left: 14px; width: 28px; transform: rotate(-15deg); }
+.flower-2 { top: 18px; right: 20px; width: 22px; transform: rotate(25deg); }
+.flower-3 { bottom: 16px; left: 28px; width: 26px; transform: rotate(40deg); }
+.flower-4 { bottom: 20px; right: 12px; width: 20px; transform: rotate(-30deg); }
+
+/* Content stays above grid + flowers */
+.card-content {
+  position: relative; z-index: 1;
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
 }
 
 .status-card::before {
