@@ -129,6 +129,8 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDetail(
 
 
 
+
+
 const audio     = document.getElementById('audioPlayer');
 const playBtn   = document.getElementById('playBtn');
 const prevBtn   = document.getElementById('prevBtn');
