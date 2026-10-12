@@ -1,8 +1,3 @@
-/* ============================================
-   PROFILE SITE — JAVASCRIPT
-   ============================================ */
-
-
 // ===== PARTICLES =====
 (function () {
   const c = document.getElementById('particles');
@@ -126,8 +121,6 @@ function closeDetail(e) {
   document.getElementById('detailOverlay').classList.remove('open');
 }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDetail(); });
-
-
 
 
 
